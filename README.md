@@ -20,7 +20,7 @@ $ ./easyrsa init-pki
 4. Generate a new certificate authority (CA). --batch sets automatic mode; --req-cn specifies the Common Name (CN) for the CA's new root certificate.
 $ ./easyrsa --batch "--req-cn=${MASTER_IP}@`date +%s`" build-ca nopass\
 
-5. The below can be used to distribute a self-signed CA certificate to all clients and refresh the local list for valid certificates. On each client, perform the following operations:
+5. The below can be used to distribute a self-signed CA certificate to all clients and refresh the local list for valid certificates. 
 $ sudo cp /root/cert/easy-rsa-master/easyrsa3/pki/private/ca.key \
 $ /usr/local/share/ca-certificates/kubernetes.crt
 $ sudo update-ca-certificates
